@@ -9,3 +9,4 @@ Code used for spatial and experimental plotting and analysis.
 #7. '7_Experimental_figures.R' - Code for generating experimental figures (Fig 3, 4, 5)
 #8. '8_Exper_stats.R' - Code for analysis of experimental results
 #9. 'Supp_shrew_figure.R' - Code for analyzing shrew diversity and metabolism
+#10. 'richeness_rasters.sh' - Shell script for generating taxon richness rasters from shapefiles
