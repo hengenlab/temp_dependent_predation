@@ -1,6 +1,6 @@
 # predation_dynamics
 
-Code used for spatial and experimental plotting and analysis.
+Code used for spatial and experimental plotting and analysis:
 
 1. '1_Plot_land.R' - Plotting functions for spatial data
 2. '2_Richness_rasters.sh' - Shell script for generating taxon richness rasters from shapefiles
