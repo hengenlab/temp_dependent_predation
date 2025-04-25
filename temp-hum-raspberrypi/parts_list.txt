@@ -1,0 +1,12 @@
+
+Other than raspberry pi with sd card,
+ parts needed for this project are listed below:
+1. SparkFun Qwiic HAT: https://www.adafruit.com/product/4688
+2. Qwiic JST SH 4-Pin Cable - 200mm Long: https://www.adafruit.com/product/4401
+3. Adafruit HTU21D-F:  https://www.adafruit.com/product/1899
+4. Adafruit TMP117: https://www.adafruit.com/product/4821
+
+For extending Qwiic JST SH 4-Pin Cable:
+1. Female/Male 'Extension' Jumper Wires: https://www.adafruit.com/product/824
+2. STEMMA QT / Qwiic JST SH 4-pin to Premium Male Headers Cable: https://www.adafruit.com/product/4209
+3. STEMMA QT / Qwiic JST SH 4-pin Cable with Premium Female Sockets: https://www.adafruit.com/product/4397
