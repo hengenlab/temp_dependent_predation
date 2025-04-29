@@ -72,7 +72,7 @@ This Python script further processes DLC prey capture data by adding an addition
 
 #### <ins>Video Frame Number Assignment</ins>
 - The script iterates through each unique trial ID present in `df_subset`.
-- For each unique trial ID, a new column `trial_frame` is added, which ranges from 1 to the length of the trial (i.e., the number of rows for that ID)
+- For each unique trial ID, a new column `trial_frame` is added, which ranges from 1 to the length of the trial (i.e., the number of rows for that ID).
 
 #### <ins>Save Processed Data</ins>
 - The consolidated data is saved to a CSV file, either creating a new file or appending to an existing one (i.e., `capture_dlc_features_all_temphum_trial_frame_ckbn_final.csv`).
