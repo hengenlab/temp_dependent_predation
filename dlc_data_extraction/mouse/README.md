@@ -37,3 +37,26 @@ This Python script processes DeepLabCut (DLC) pose estimates stored in CSV files
 
 #### <ins>Execution</ins>
 - To run the script, simply execute it in a Python environment. Ensure that paths specified for input files and output directories are correct and exist.
+
+## 2. r_run_capture_dlc_features_all_temphum_ckbn.py: Overview
+This Python script further processes DLC prey capture data by associating it with temperature and humidity readings. The script reads an input CSV file containing consolidated DLC features from every trial, appends temperature and humidity data to each trial, and generates a consolidated output CSV file.
+
+### Script Explanation
+
+#### <ins>Load Initial Data</ins>
+- The file for the consolidated DLC features from every trial `capture_dlc_features_all_ckbn_final.csv` is read into a pandas DataFrame named `df_subset`.
+
+#### <ins>Data Processing Steps</ins>
+1. **Add Arena Number:** 
+    - The correct experimental arena number is added based on each animal, stored in a new column named `arenanum`.
+
+2. **Create Trial ID:** 
+    - Unique trial IDs are created for each trial, using the `date`, `arenanum`, and `trial_daily` columns in `df_subset`, storing in a new column named `id`.
+
+3. **Append Temperature and Humidity Data:** 
+    - The script then iterates through each unique trial ID present in `df_subset`.
+    - For each unique trial ID, the corresponding temperature and humidity data that matches that date and arena are loaded.
+    - The subset of temperature and humidity data corresponding to the in-trial time range is extracted, and various statistical measures (e.g., median, mean, max, min) are calculated and appended.
+
+#### <ins>Save Processed Data</ins>
+- The consolidated data is saved to a CSV file, either creating a new file or appending to an existing one (i.e.,`capture_dlc_features_all_temphum_ckbn_final.csv`).
