@@ -23,7 +23,7 @@ This Python script processes DeepLabCut (DLC) pose estimates stored in CSV files
     - The DLC feature files for the current animal and date are concatenated into a single DataFrame `df_feat_sub`.
 3. **Video Frame Number Assignment:**
     - A column named `video_frame` is added to `df_feat_sub`, assigning frame numbers sequentially.
-4. **Filter Trials:**
+4. **Filter Pretrials:**
     - For each row (i.e., trial) in the filtered metadata, the script checks for valid start and end capture times.
     - It then converts these times into frame numbers by calculating total seconds and multiplying by frame rate (30 fps).
     - The subset of DLC features corresponding to the 60 seconds preceding each trial (i.e., pretrial time range) is extracted to `df_feat_sub_range`.
@@ -37,12 +37,12 @@ This Python script processes DeepLabCut (DLC) pose estimates stored in CSV files
 - To run the script, simply execute it in a Python environment. Ensure that paths specified for input files and output directories are correct and exist.
 
 ## 2. r_run_capture_pretrial_dlc_features_all_temphum_ckbn.py: Overview
-This Python script further processes DLC pretrial data by associating it with temperature and humidity readings. The script reads an input CSV file containing consolidated DLC features from every pretrial period, appends corresponding temperature and humidity data for every trial, and generates a consolidated output CSV file.
+This Python script further processes DLC pretrial data by associating it with temperature and humidity readings. The script reads an input CSV file containing consolidated DLC features from every pretrial period, appends corresponding temperature and humidity data for every pretrial period, and generates a consolidated output CSV file.
 
 ### Script Explanation
 
 #### <ins>Load Initial Data</ins>
-- The file for the consolidated DLC features from every trial `capture_pretrial_dlc_features_all_ckbn_final.csv` is read into a pandas DataFrame named `df_subset`.
+- The file for the consolidated DLC features from every pretrial period `capture_pretrial_dlc_features_all_ckbn_final.csv` is read into a pandas DataFrame named `df_subset`.
 
 #### <ins>Data Processing Steps</ins>
 1. **Add Arena Number:** 
@@ -69,11 +69,11 @@ This Python script further processes DLC pretrial data by adding an additional c
 ### Script Explanation
 
 #### <ins>Load Initial Data</ins>
-- The file for the consolidated DLC features from every trial plus temperature and humidity data `capture_pretrial_dlc_features_all_temphum_ckbn_final.csv` is read into a pandas DataFrame named `df_subset`.
+- The file for the consolidated DLC features from every pretrial period plus temperature and humidity data `capture_pretrial_dlc_features_all_temphum_ckbn_final.csv` is read into a pandas DataFrame named `df_subset`.
 
 #### <ins>Video Frame Number Assignment</ins>
 - The script iterates through each unique trial ID present in `df_subset`.
-- For each unique trial ID, a new column `trial_frame` is added, which ranges from 1 to the length of the trial (i.e., the number of rows for that ID).
+- For each unique trial ID, a new column `trial_frame` is added, which ranges from 1 to the length of the corresponding pretrial period (i.e., the number of rows for that ID).
 
 #### <ins>Save Processed Data</ins>
 - The consolidated data is saved to a CSV file, either creating a new file or appending to an existing one (i.e., `capture_pretrial_dlc_features_all_temphum_trial_frame_ckbn_final.csv`).
