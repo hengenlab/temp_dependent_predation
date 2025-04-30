@@ -1,4 +1,4 @@
-# Prey Capture Data Processing Scripts: Mouse & Roach Trial Data
+# Prey Capture Data Processing Scripts: Mouse Pretrial Data
 
 1. r_run_capture_pretrial_dlc_features_all_ckbn.py
 2. r_run_capture_pretrial_dlc_features_all_temphum_ckbn.py
