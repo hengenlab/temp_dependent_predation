@@ -37,7 +37,7 @@ This Python script processes DeepLabCut (DLC) pose estimates stored in CSV files
 - To run the script, simply execute it in a Python environment. Ensure that paths specified for input files and output directories are correct and exist.
 
 ## 2. r_run_capture_pretrial_dlc_features_all_temphum_ckbn.py: Overview
-This Python script further processes DLC pretrial data by associating it with temperature and humidity readings. The script reads an input CSV file containing consolidated DLC features from every trial, appends corresponding temperature and humidity data for every trial, and generates a consolidated output CSV file.
+This Python script further processes DLC pretrial data by associating it with temperature and humidity readings. The script reads an input CSV file containing consolidated DLC features from every pretrial period, appends corresponding temperature and humidity data for every trial, and generates a consolidated output CSV file.
 
 ### Script Explanation
 
