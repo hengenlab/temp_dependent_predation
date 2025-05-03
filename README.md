@@ -1,14 +1,38 @@
-# predation_dynamics
+# Temperature-Dependent Predation Project
 
-Code used for spatial and experimental plotting and analysis:
+This repository contains all code associated with our study on temperature-dependent predation and vertebrate richness. It includes:
 
-1. '1_Plot_land.R' - Plotting functions for spatial data
-2. '2_Richness_rasters.sh' - Shell script for generating taxon richness rasters from shapefiles
-3. '3_richness.R' - Aggregate richness rasters
-4. '4_autocorrelation_taxa' – Model selection and linear and bayesian spatial regression, inluding autocorrelation
-5. '5_Figures_1,2,6.R' Code for producing spatial figures (Figs 1, 2, 6)
-6. '6_Data_To_Load.R' 'Reading in and refinding video data for analysis
-7. '7_outliers_and_errors' - Code for detecting and removing ouliers and errors from video data
-8. '8_Experimental_figures.R' - Code for generating experimental figures (Figs 3, 4, 5)
-9. '9_Exper_stats.R' - Code for analysis of experimental results
-10. '10_Supp_shrew_figure.R' - Code for analyzing shrew diversity and metabolism
+- Python scripts for video tracking and environmental sensor logging
+- R and shell scripts for spatial modeling, experimental analysis, and figure generation
+
+---
+
+## Python Tools: Video & Sensor Processing
+
+Python scripts process behavioral videos using DeepLabCut and log temperature/humidity from Raspberry Pi sensors.
+
+See [README_Python.md](README_Python.md) for full details on:
+
+- Prey capture trial processing (DLC data)
+- Solitary control behavior
+- Pretrial behavior analysis
+- Sensor setup and data logging scripts
+
+---
+
+## R + Shell Workflow: Spatial Modeling, Statistics, and Figures
+
+R and shell scripts handle all major modeling and visualization steps:
+
+- Species richness rasterization
+- Spatial covariate extraction
+- Spatial and experimental model fitting
+- Generation of all figures in the manuscript
+
+See [README_R.md](README_R.md) for detailed script summaries and execution order.
+
+---
+
+## Data Access
+
+To run the spatial and experimental analyses or replicate behavioral tracking workflows, contact authors for data.
