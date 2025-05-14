@@ -5,12 +5,12 @@ library(ncdf4)
 library(terra)
 library(sp)
 
-# Load spatial plotting functions
-source(file.path(github_path, "3_spatial_functions.R"))
-
 # Update paths
 path <- "/Users/jgradym/Desktop/Predation_Data"
 github_path = "/Users/jgradym/Documents/GitHub/mouse_capture"
+
+# Load spatial plotting functions
+source(file.path(github_path, "3_spatial_functions.R"))
 
 rich_path <- file.path(path, "/Richness_Distributions/richnessrasters")
 
@@ -26,6 +26,7 @@ rich = brick(stack(rich_files_base))
 rich_2x = brick(stack(rich_files_2x))
 rich_4x = brick(stack(rich_files_4x))
 names(rich)
+
 # sum anura1 and anura2 if needed to get anura_richness, then drop anura1 and anura2
 rich = dropLayer(rich, c("anura1_richness", "anura2_richness"))
 
@@ -89,7 +90,9 @@ names(rich) <- layer_names
 names(rich) 
 
 # Remove aquatic cells
-vert_rich = mask(rich, ocean_plot, inverse = T)
+ocean_mask <- rasterize(ocean_sp, raster48by48, field = 1, background = 0, getCover = TRUE)
+ocean_mask[ocean_mask > 0.1] <- NA
+vert_rich = mask(rich, ocean_mask)
 
 #------------------------------------------------------------------------------
 #------------------ Add Environmental Variables -------------------------------
@@ -371,18 +374,28 @@ log_endo_ecto_rich <- log(vert_ras$endo_ecto_rich)
 log_mammal_reptile_rich <- log(vert_ras$mammal_reptile_rich)
 log_squamate_rich <- log(vert_ras$squamates_richness)
 log_turtle_rich <- log(vert_ras$turtles_richness)
+log_crocodile_rich <- log(vert_ras$crocodile_richness)
 log_salamander_rich <- log(vert_ras$caudata_richness)
 log_frog_rich <- log(vert_ras$anura_richness)
+log_caecilian_rich <- log(vert_ras$gymnophiona_richness)
 log_mammal_rich <- log(vert_ras$mammals_richness)
 log_bird_rich <- log(vert_ras$birds_richness)
 log_soric_crocid_rich <- log(vert_ras$soric_crocid_rich)
+log_endo_rich <- log(vert_ras$endo_rich)
+log_ecto_rich <- log(vert_ras$ecto_rich)
+log_amphibian_rich <- log(vert_ras$amphibian_rich)
+log_reptile_rich <- log(vert_ras$reptiles_richness)
 
 # Add log layers to raster stack
 vert_ras <- addLayer(vert_ras, 
                      log_precip, log_npp, log_endo_ecto_rich,
                      log_soric_crocid_rich, log_mammal_reptile_rich,
-                     log_squamate_rich, log_turtle_rich, log_salamander_rich,
-                     log_frog_rich, log_mammal_rich, log_bird_rich)
+                     log_squamate_rich, log_turtle_rich, log_crocodile_rich, 
+                     log_salamander_rich, log_frog_rich, log_caecilian_rich,
+                     log_mammal_rich, log_bird_rich, 
+                     log_endo_rich,log_ecto_rich,log_amphibian_rich, log_reptile_rich)
+
+
 
 # --- Rename log layers ---
 names(vert_ras)
@@ -390,8 +403,10 @@ names(vert_ras)
 correct_names <- c(names(vert_ras)[1:37],
                    "log_precip", "log_npp", "log_endo_ecto_rich", 
                    "log_soric_crocid_rich", "log_mammal_reptile_rich",
-                   "log_squamate_rich", "log_turtle_rich", "log_salamander_rich", 
-                   "log_frog_rich", "log_mammal_rich", "log_bird_rich")
+                   "log_squamate_rich", "log_turtle_rich", "log_crocodile_rich", 
+                   "log_salamander_rich", "log_frog_rich", "log_caecilian_rich",
+                    "log_mammal_rich", "log_bird_rich",
+                   "log_endo_rich", "log_ecto_rich","log_amphibian_rich", "log_reptile_rich")
 
 names(vert_ras) <- correct_names
 vert_ras <- brick(vert_ras)
