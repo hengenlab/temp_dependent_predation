@@ -24,7 +24,7 @@ theme_plot <- theme(
   axis.title.x = element_text(margin = margin(t = 10)),
   axis.title.x.top = element_text(margin = margin(b = 5)),
   plot.title = element_text(size = 18, face = "plain", hjust = 10),
-  panel.border = element_rect(colour = "black", fill = NA, size = 1),
+  panel.border = element_rect(colour = "black", fill = NA, linewidth = 1),
   panel.background = element_blank(),
   strip.background = element_blank(),
   legend.position = "none",
