@@ -5,6 +5,7 @@ library(lattice)
 library(latticeExtra)
 library(sf)  # for reading ocean shapefiles
 library(sp)  # 
+library(ggplot2)
 
 #-----------------------------------------------------
 # File path to project root (used for accessing all input files)

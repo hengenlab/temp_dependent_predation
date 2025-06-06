@@ -11,7 +11,7 @@ This repository contains all code associated with our study on temperature-depen
 
 Python scripts process behavioral videos using DeepLabCut and log temperature/humidity from Raspberry Pi sensors.
 
-See [README_Python.md](README_Python.md) for full details on:
+See [README_Python.md](Python_code/README_Python.md) for full details on:
 
 - Prey capture trial processing (DLC data)
 - Solitary control behavior
@@ -29,7 +29,7 @@ R and shell scripts handle all major modeling and visualization steps:
 - Spatial and experimental model fitting
 - Generation of all figures in the manuscript
 
-See [README_R.md](README_R.md) for detailed script summaries and execution order.
+See [README_R.md](R_shell_code/README_R.md) for detailed script summaries and execution order.
 
 ---
 

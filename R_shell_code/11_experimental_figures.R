@@ -3,7 +3,9 @@ library(patchwork)
 library(ggsignif)
 library(lubridate) 
 library(data.table)
-
+library(lme4)
+library(egg)
+library(grid)
 
 #------ Relative File paths - UPDATE -----------
 path <- "/Users/jgradym/Desktop/Predation_Data"
@@ -11,7 +13,7 @@ github_path = "/Users/jgradym/Documents/GitHub/mouse_capture"
 
 ########### Load Data and Functions ###########
 load(file.path(path, "Experim_data", "capture_data.RData"))
-source(file.path(github_path, "7_experim_functions.R"))
+source(file.path(github_path, "R_shell_code/7_experim_functions.R"))
 
 ##################################################
 #########  Figure 3 Hunting Prey ######
@@ -573,11 +575,6 @@ p1/p2
 ################## Roach Temperature for mismatch ###################
 
 mismatch_temps = read_csv(file.path(path, "Experim_data", "mismatch_temps.csv"))
-
-library(tidyverse)
-
-# Reshape data to long format
-library(tidyverse)
 
 # Reshape data to long format
 mismatch_long <- mismatch_temps %>%
