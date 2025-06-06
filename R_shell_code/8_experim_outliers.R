@@ -15,7 +15,7 @@ path <- "/Users/jgradym/Desktop/Predation_Data"
 github_path = "/Users/jgradym/Documents/GitHub/mouse_capture"
 
 # Load Functions
-source(file.path(github_path, "7_experim_functions.R")) #outlier functions
+source(file.path(github_path, "R_shell_code/7_experim_functions.R")) #outlier functions
 
 # Load Files
 roach_solo_vid00 = read_csv(file.path(path, "Experim_data/roach_solitary_dlc_features_all_temphum_trial_frame_final.csv"))

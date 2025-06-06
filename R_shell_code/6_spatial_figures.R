@@ -11,10 +11,9 @@ library(colorspace)     # For color manipulation
 library(readxl)         # Read in supplemental Data 1
 # ------------------- Load Paths and Custom Functions ---------------------
 # Update paths
-path <- "/Users/jgradym/Desktop/Predation_Data"
 github_path = "/Users/jgradym/Documents/GitHub/mouse_capture"
 
-source(file.path(github_path, "3_spatial_functions.R"))
+source(file.path(github_path, "R_shell_code/3_spatial_functions.R"))
 
 # ------------------- Load Data ---------------------------------
 vert_df  = read_csv(file.path(path, "Spatial_data/vert_df.csv"))

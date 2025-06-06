@@ -31,7 +31,7 @@ target_dfs = c("hunt_results", "hunt_30", "hunt_35", "hunt_vid0", "hunt_vid",
                "hunt_vid1", "prehunt_results", "prehunt_vid", "prehunt_vid1", 
                "roach_solo_vid", "roach_solo_vid1", "roach_solo_results")
 
-for (df_name in ls()) {
+for (df_name in c("meta", "hunt_results", "hunt_30", "hunt_35", "hunt_vid0", "hunt_vid", "hunt_vid1", "prehunt_results", "prehunt_vid", "prehunt_vid1", "roach_solo_vid", "roach_solo_vid1", "roach_solo_results", "roach_solo_30", "pre_hunt30", "pre_hunt35")) {
   df = get(df_name)
   if (is.data.frame(df)) {
     # Convert to factor if targ_temperature exists

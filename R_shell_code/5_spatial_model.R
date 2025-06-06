@@ -23,9 +23,9 @@ github_path = "/Users/jgradym/Documents/GitHub/mouse_capture"
 #-----------------------------#
 # 3. Load Data                #
 #-----------------------------#
-vert_ras = brick(file.path(path, "Spatial_data/vert_ras.grd"))
-vert_df = read_csv(file.path(path, "Spatial_data/vert_df.csv"))
 source(file.path(github_path, "3_spatial_functions.R"))
+vert_ras = brick(file.path(path, "Spatial_data/vert_ras.grd"))
+vert_df = read_csv(file.path(path, "R_shell_code/Spatial_data/vert_df.csv"))
 
 #-----------------------------#
 # 4. Data Cleaning & Transform#

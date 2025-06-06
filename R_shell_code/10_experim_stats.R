@@ -94,7 +94,7 @@ pursuit_vars <- list(
   list(var = "roach_acc_q50", formula = log(roach_acc_q50) ~ one_kT + log(roach_g) + (1|animal), model = "lmer"),
   list(var = "roach_acc_max", formula = log(roach_acc_max) ~ one_kT + log(roach_g) + (1|arena), model = "lmer")
 )
-# Functions to tit and summarize a linear (lm) or mixed-effects model (lmer) for a single variable
+# Functions to fit and summarize a linear (lm) or mixed-effects model (lmer) for a single variable
 #' Filters data for NA, infinite, or non-positive values before fitting.
 #' Returns a tidy one-row summary table for the effect of one_kT, including confidence intervals, p-value, n, and both R² types.
 #' @param formula Model formula (log(y) ~ predictors + (1|random)).

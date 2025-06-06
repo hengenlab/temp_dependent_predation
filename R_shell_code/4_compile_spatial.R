@@ -6,11 +6,10 @@ library(terra)
 library(sp)
 
 # Update paths
-path <- "/Users/jgradym/Desktop/Predation_Data"
 github_path = "/Users/jgradym/Documents/GitHub/mouse_capture"
 
 # Load spatial plotting functions
-source(file.path(github_path, "3_spatial_functions.R"))
+source(file.path(github_path, "R_shell_code/3_spatial_functions.R"))
 
 rich_path <- file.path(path, "/Richness_Distributions/richnessrasters")
 
